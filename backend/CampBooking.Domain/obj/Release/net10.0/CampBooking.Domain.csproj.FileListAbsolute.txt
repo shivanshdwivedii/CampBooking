@@ -1,0 +1,12 @@
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\bin\Release\net10.0\CampBooking.Domain.deps.json
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\bin\Release\net10.0\CampBooking.Domain.dll
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\bin\Release\net10.0\CampBooking.Domain.pdb
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Release\net10.0\CampBooking.Domain.csproj.AssemblyReference.cache
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Release\net10.0\CampBooking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Release\net10.0\CampBooking.Domain.AssemblyInfoInputs.cache
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Release\net10.0\CampBooking.Domain.AssemblyInfo.cs
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Release\net10.0\CampBooking.Domain.csproj.CoreCompileInputs.cache
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Release\net10.0\CampBooking.Domain.dll
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Release\net10.0\refint\CampBooking.Domain.dll
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Release\net10.0\CampBooking.Domain.pdb
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Release\net10.0\ref\CampBooking.Domain.dll

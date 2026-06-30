@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="CampBooking.API/CampBooking.API.csproj" />
+  <Project Path="CampBooking.Application/CampBooking.Application.csproj" />
+  <Project Path="CampBooking.Domain/CampBooking.Domain.csproj" />
+  <Project Path="CampBooking.Infrastructure/CampBooking.Infrastructure.csproj" />
+  <Project Path="CampBooking.Tests/CampBooking.Tests.csproj" />
+</Solution>

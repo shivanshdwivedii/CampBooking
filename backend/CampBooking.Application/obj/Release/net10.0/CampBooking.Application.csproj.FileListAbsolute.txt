@@ -1,0 +1,15 @@
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\bin\Release\net10.0\CampBooking.Application.deps.json
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\bin\Release\net10.0\CampBooking.Application.dll
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\bin\Release\net10.0\CampBooking.Application.pdb
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\bin\Release\net10.0\CampBooking.Domain.dll
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\bin\Release\net10.0\CampBooking.Domain.pdb
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\obj\Release\net10.0\CampBooking.Application.csproj.AssemblyReference.cache
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\obj\Release\net10.0\CampBooking.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\obj\Release\net10.0\CampBooking.Application.AssemblyInfoInputs.cache
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\obj\Release\net10.0\CampBooking.Application.AssemblyInfo.cs
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\obj\Release\net10.0\CampBooking.Application.csproj.CoreCompileInputs.cache
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\obj\Release\net10.0\CampBook.F05F238E.Up2Date
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\obj\Release\net10.0\CampBooking.Application.dll
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\obj\Release\net10.0\refint\CampBooking.Application.dll
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\obj\Release\net10.0\CampBooking.Application.pdb
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Application\obj\Release\net10.0\ref\CampBooking.Application.dll
