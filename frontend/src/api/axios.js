@@ -1,10 +1,21 @@
 import axios from "axios";
 
+const getApiBaseUrl = () => {
+    const base = import.meta.env.VITE_API_BASE_URL;
+
+    if (!base) {
+        return "http://localhost:5121/api";
+    }
+
+    const trimmed = base.replace(/\/$/, "");
+
+    return /\/api$/i.test(trimmed)
+        ? trimmed
+        : `${trimmed}/api`;
+};
+
 const api = axios.create({
-    baseURL:
-        import.meta.env.VITE_API_BASE_URL
-            ? `${import.meta.env.VITE_API_BASE_URL.replace(/\/$/, "")}`
-            : "http://localhost:5121/api",
+    baseURL: getApiBaseUrl(),
     timeout: 15000,
 });
 
