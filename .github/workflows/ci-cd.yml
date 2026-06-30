@@ -1,0 +1,97 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    outputs:
+      frontend-artifact: frontend-dist
+      backend-artifact: backend-publish
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore & Build solution
+        run: |
+          dotnet restore backend/CampBooking.slnx
+          dotnet build backend/CampBooking.slnx --configuration Release --no-restore
+
+      - name: Run tests
+        run: |
+          dotnet test backend/CampBooking.Tests/CampBooking.Tests.csproj --configuration Release --no-build --verbosity minimal
+
+      - name: Publish backend
+        run: |
+          rm -rf backend/backend-publish || true
+          dotnet publish backend/CampBooking.API/CampBooking.API.csproj -c Release -o backend/backend-publish
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+
+      - name: Upload backend artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-publish
+          path: backend/backend-publish
+
+      - name: Upload frontend artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/dist
+
+  deploy-backend:
+    name: Deploy Backend to Azure Web App
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download backend artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: backend-publish
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: backend-publish
+
+  deploy-frontend:
+    name: Deploy Frontend to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download frontend artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: frontend-dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend-dist
+
+# Notes:
+# - Add the repository secret `AZURE_WEBAPP_PUBLISH_PROFILE` with the Azure Web App publish profile XML.
+# - `GITHUB_TOKEN` is provided automatically for the pages deployment.
