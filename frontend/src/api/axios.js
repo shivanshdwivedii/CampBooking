@@ -11,7 +11,7 @@ const getApiBaseUrl = () => {
 
     return /\/api$/i.test(trimmed)
         ? trimmed
-        : `${trimmed}`;
+        : `${trimmed}/api`;
 };
 
 const api = axios.create({
