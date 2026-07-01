@@ -132,3 +132,4 @@ C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\
 C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Tests\obj\Debug\net10.0\CampBooking.Tests.pdb
 C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Tests\obj\Debug\net10.0\CampBooking.Tests.genruntimeconfig.cache
 C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Tests\obj\Debug\net10.0\ref\CampBooking.Tests.dll
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Tests\obj\Debug\net10.0\CampBooking.Tests.sourcelink.json

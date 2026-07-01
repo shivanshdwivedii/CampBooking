@@ -37,8 +37,8 @@ public interface IBookingRepository
 
 Task<int> GetBookedSeatsAsync(
     Guid campId,
-    DateTime checkInDate,
-    DateTime checkOutDate);
+    DateOnly checkInDate,
+    DateOnly checkOutDate);
 
     // ==========================================
     // UPDATE

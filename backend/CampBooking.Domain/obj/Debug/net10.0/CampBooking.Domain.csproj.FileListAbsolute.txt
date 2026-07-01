@@ -10,3 +10,4 @@ C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\
 C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Debug\net10.0\refint\CampBooking.Domain.dll
 C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Debug\net10.0\CampBooking.Domain.pdb
 C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Debug\net10.0\ref\CampBooking.Domain.dll
+C:\Users\shivanshdwivedi\OneDrive - Nagarro\Desktop\CampBookingSolution\backend\CampBooking.Domain\obj\Debug\net10.0\CampBooking.Domain.sourcelink.json

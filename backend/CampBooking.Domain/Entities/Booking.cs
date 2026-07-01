@@ -16,10 +16,8 @@ public class Booking : BaseEntity
 
 public int Guests { get; set; } = 1;
 
-    public DateTime CheckInDate { get; set; }
-
-    public DateTime CheckOutDate { get; set; }
-
+public DateOnly CheckInDate { get; set; }
+public DateOnly CheckOutDate { get; set; }
     public int TotalNights { get; set; }
 
 

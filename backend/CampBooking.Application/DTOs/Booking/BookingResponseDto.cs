@@ -1,5 +1,3 @@
-namespace CampBooking.Application.DTOs.Booking;
-
 public class BookingResponseDto
 {
     public Guid Id { get; set; }
@@ -13,12 +11,12 @@ public class BookingResponseDto
     public string UserId { get; set; } = string.Empty;
 
     public string UserName { get; set; } = string.Empty;
-    
-public int Guests { get; set; }
 
-        public DateTime CheckInDate { get; set; }
+    public int Guests { get; set; }
 
-    public DateTime CheckOutDate { get; set; }
+    public DateOnly CheckInDate { get; set; }
+
+    public DateOnly CheckOutDate { get; set; }
 
     public int TotalNights { get; set; }
 

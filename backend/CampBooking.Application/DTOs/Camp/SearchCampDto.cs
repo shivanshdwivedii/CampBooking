@@ -8,9 +8,8 @@ public class SearchCampDto
 
     public string? Category { get; set; }
 
-    public DateTime? CheckInDate { get; set; }
-
-    public DateTime? CheckOutDate { get; set; }
+public DateOnly? CheckInDate { get; set; }
+public DateOnly? CheckOutDate { get; set; }
 
     public int Capacity { get; set; }
 

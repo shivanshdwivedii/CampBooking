@@ -76,44 +76,32 @@ public class CampRepository : ICampRepository
             c.Capacity >= dto.Capacity);
     }
 
-    // Date Availability
 if (dto.CheckInDate.HasValue &&
     dto.CheckOutDate.HasValue)
 {
-    var checkIn =
-        DateOnly.FromDateTime(
-            dto.CheckInDate.Value);
-
-    var checkOut =
-        DateOnly.FromDateTime(
-            dto.CheckOutDate.Value);
-
-    var checkInDateTime =
-        dto.CheckInDate.Value;
-
-    var checkOutDateTime =
-        dto.CheckOutDate.Value;
+    var checkIn = dto.CheckInDate.Value;
+    var checkOut = dto.CheckOutDate.Value;
 
     query = query.Where(c =>
         c.StartDate <= checkIn &&
         c.EndDate >= checkOut);
 
-query = query.Where(c =>
-    (
-        c.Capacity -
+    query = query.Where(c =>
         (
-            c.Bookings
-                .Where(b =>
-                    b.Status == BookingStatus.Confirmed &&
-                    checkInDateTime < b.CheckOutDate &&
-                    checkOutDateTime > b.CheckInDate)
-                .Sum(b => (int?)b.Guests) ?? 0
+            c.Capacity -
+            (
+                c.Bookings
+                    .Where(b =>
+                        b.Status == BookingStatus.Confirmed &&
+                        checkIn < b.CheckOutDate &&
+                        checkOut > b.CheckInDate)
+                    .Sum(b => (int?)b.Guests) ?? 0
+            )
         )
-    )
-    >= (dto.Capacity > 0
-        ? dto.Capacity
-        : 1)
-);
+        >= (dto.Capacity > 0
+            ? dto.Capacity
+            : 1)
+    );
 }
     
 

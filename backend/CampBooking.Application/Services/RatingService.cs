@@ -56,12 +56,12 @@ public RatingService(
                 "Invalid booking.");
         }
 
-        if (booking.CheckOutDate.Date >
-            DateTime.UtcNow.Date)
-        {
-            throw new ApplicationException(
-                "Rating is allowed only after stay completion.");
-        }
+if (booking.CheckOutDate >
+    DateOnly.FromDateTime(DateTime.UtcNow))
+{
+    throw new ApplicationException(
+        "Rating is allowed only after stay completion.");
+}
 
         var existingRating =
             await _ratingRepository

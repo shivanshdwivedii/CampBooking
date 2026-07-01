@@ -68,8 +68,8 @@ public async Task<IEnumerable<Booking>> GetUserBookingsAsync(
 
 public async Task<int> GetActiveBookingCountAsync(
     Guid campId,
-    DateTime checkInDate,
-    DateTime checkOutDate)
+    DateOnly checkInDate,
+    DateOnly checkOutDate)
 {
     return await _context.Bookings
         .CountAsync(b =>
@@ -94,8 +94,8 @@ public async Task<IEnumerable<Booking>> GetBookingsByStatusAsync(
 
 public async Task<int> GetBookedSeatsAsync(
     Guid campId,
-    DateTime checkInDate,
-    DateTime checkOutDate)
+    DateOnly checkInDate,
+    DateOnly checkOutDate)
 {
     return await _context.Bookings
         .Where(b =>

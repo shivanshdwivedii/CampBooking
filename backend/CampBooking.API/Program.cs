@@ -10,7 +10,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
-//using Microsoft.OpenApi.Models;
+// ADD THIS LINE
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactPolicy",
@@ -88,7 +90,6 @@ using (var scope = app.Services.CreateScope())
             .GetRequiredService<UserManager<ApplicationUser>>();
 
     await RoleSeeder.SeedRolesAsync(roleManager);
-
     await AdminSeeder.SeedAdminAsync(userManager);
 }
 

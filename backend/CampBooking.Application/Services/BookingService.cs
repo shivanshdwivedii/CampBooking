@@ -30,21 +30,16 @@ public partial class BookingService : IBookingService
 if (camp == null)
     throw new ApplicationException("Camp not found.");
 
-var campStart =
-    camp.StartDate.ToDateTime(TimeOnly.MinValue);
-
-var campEnd =
-    camp.EndDate.ToDateTime(TimeOnly.MinValue);
-
-if (dto.CheckInDate.Date < campStart.Date ||
-    dto.CheckOutDate.Date > campEnd.Date)
+if (dto.CheckInDate < camp.StartDate ||
+    dto.CheckOutDate > camp.EndDate)
 {
     throw new ApplicationException(
         $"Camp is available only between " +
         $"{camp.StartDate} and {camp.EndDate}.");
 }
 
-if (dto.CheckInDate.Date < DateTime.UtcNow.Date)
+if (dto.CheckInDate <
+    DateOnly.FromDateTime(DateTime.UtcNow))
 {
     throw new ApplicationException(
         "Check-in date cannot be in the past.");
@@ -57,8 +52,9 @@ if (dto.CheckOutDate <= dto.CheckInDate)
 }
 // Check-in validation
 
-        var totalNights =
-            (dto.CheckOutDate - dto.CheckInDate).Days;
+var totalNights =
+    dto.CheckOutDate.DayNumber -
+    dto.CheckInDate.DayNumber;
 
         if (totalNights > 30)
         {
@@ -317,12 +313,12 @@ Guests = booking.Guests,
             throw new ApplicationException(
                 "Booking not found.");
         }
-
-        if (booking.CheckInDate <= DateTime.UtcNow)
-        {
-            throw new ApplicationException(
-                "Only future bookings can be cancelled.");
-        }
+if (booking.CheckInDate <=
+    DateOnly.FromDateTime(DateTime.UtcNow))
+{
+    throw new ApplicationException(
+        "Only future bookings can be cancelled.");
+}
         var camp =
     await _campRepository.GetByIdAsync(
         booking.CampId);

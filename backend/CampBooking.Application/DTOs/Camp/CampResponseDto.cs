@@ -16,9 +16,8 @@ public class CampResponseDto
 
     public int AvailableSeats { get; set; }
 
-    public DateOnly StartDate { get; set; }
-
-    public DateOnly EndDate { get; set; }
+public DateOnly StartDate { get; set; }
+public DateOnly EndDate { get; set; }
 
     public string Category { get; set; } = string.Empty;
 
