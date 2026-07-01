@@ -11,21 +11,29 @@ function CampsPage() {
   const [camps, setCamps] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const today =
-    new Date().toISOString().split("T")[0];
+const now = new Date();
 
-  const tomorrow =
-    new Date(
-      Date.now() + 86400000
-    )
-      .toISOString()
-      .split("T")[0];
+now.setMinutes(
+  now.getMinutes() -
+  now.getTimezoneOffset()
+);
 
-  const [checkInDate, setCheckInDate] =
-    useState(today);
+const today =
+  now.toISOString().split("T")[0];
 
-  const [checkOutDate, setCheckOutDate] =
-    useState(tomorrow);
+const tomorrowDate = new Date(now);
+tomorrowDate.setDate(
+  tomorrowDate.getDate() + 1
+);
+
+const tomorrow =
+  tomorrowDate.toISOString().split("T")[0];
+
+const [checkInDate, setCheckInDate] =
+  useState(today);
+
+const [checkOutDate, setCheckOutDate] =
+  useState(tomorrow);
 
   const [capacity, setCapacity] =
     useState(0);
@@ -63,15 +71,28 @@ function CampsPage() {
 
       setLoading(true);
 
-      const data =
-        await searchCamps({
-          location: search,
-          checkInDate,
-          checkOutDate,
-          capacity,
-          page: 1,
-          pageSize: 20,
-        });
+     const params = {
+  page: 1,
+  pageSize: 20,
+};
+
+if (search.trim()) {
+  params.location = search;
+}
+
+if (checkInDate) {
+  params.checkInDate = checkInDate;
+}
+
+if (checkOutDate) {
+  params.checkOutDate = checkOutDate;
+}
+
+if (capacity > 0) {
+  params.capacity = capacity;
+}
+
+const data = await searchCamps(params);
 
       setCamps(data);
 
