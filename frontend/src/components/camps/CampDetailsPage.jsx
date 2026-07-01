@@ -99,16 +99,17 @@ const loadRatings = async () => {
 
       <section className="relative h-[500px] overflow-hidden rounded-b-[40px]">
 
-        <img
-          src={
-            camp.imageUrl
-              ? `http://localhost:5121/${camp.imageUrl.replace(/^\/?/, "")}`
-              : "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4"
-          }
-          alt={camp.name}
-          className="h-full w-full object-cover object-center"
-        />
-
+<img
+  src={
+    camp.imageUrl
+      ? camp.imageUrl.startsWith("http")
+        ? camp.imageUrl
+        : `${import.meta.env.VITE_API_BASE_URL}/${camp.imageUrl.replace(/^\/?/, "")}`
+      : "https://placehold.co/600x400?text=Camp"
+  }
+  alt={camp.name}
+  className="h-full w-full object-cover"
+/>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
         <div className="absolute bottom-12 left-1/2 w-full max-w-7xl -translate-x-1/2 px-6">

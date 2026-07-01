@@ -25,15 +25,17 @@ function CampCard({
 
             <div className="relative h-60">
 
-                <img
-src={
+<img
+  src={
     camp.imageUrl
-        ? `http://localhost:5121/${camp.imageUrl.replace(/^\/?/, "")}`
-        : "https://placehold.co/600x400?text=Camp"
-}
-                    alt={camp.name}
-                    className="h-full w-full object-cover object-center"
-                />
+      ? camp.imageUrl.startsWith("http")
+        ? camp.imageUrl
+        : `${import.meta.env.VITE_API_BASE_URL}/${camp.imageUrl.replace(/^\/?/, "")}`
+      : "https://placehold.co/600x400?text=Camp"
+  }
+  alt={camp.name}
+  className="h-full w-full object-cover"
+/>
 
                 <span className="absolute left-4 top-4 rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white">
 
