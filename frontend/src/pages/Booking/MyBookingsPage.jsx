@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../components/layout/Navbar";
+import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import {
     getMyBookings,
@@ -69,11 +70,11 @@ function MyBookingsPage() {
 
             console.error(error);
 
-            alert(
-                error?.response?.data ||
-                "Unable to cancel booking."
-            );
-
+toast.error(
+  error?.response?.data?.message ||
+  error?.response?.data ||
+  "Unable to cancel booking."
+);
         } finally {
 
             setCancelLoading(null);
